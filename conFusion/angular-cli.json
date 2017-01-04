@@ -18,7 +18,11 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "styles.css"
+        "styles.css",
+        "../bower_components/bootstrap/dist/css/bootstrap.min.css",
+        "../bower_components/bootstrap/dist/css/bootstrap-theme.min.css",
+        "../bower_components/font-awesome/css/font-awesome.min.css",
+        "./assets/css/bootstrap-social.css"
       ],
       "scripts": [],
       "environments": {
