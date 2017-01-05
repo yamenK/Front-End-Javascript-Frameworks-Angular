@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { CategoryFilterPipe } from './menu/category-filter.pipe';
+import { ContactusComponent } from './contactus/contactus.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    CategoryFilterPipe
+    CategoryFilterPipe,
+    ContactusComponent
   ],
   imports: [
     BrowserModule,
