@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contactus.component.css']
 })
 export class ContactusComponent implements OnInit {
+  feedback =  {mychannel:"", firstName:"", lastName:"",
+    agree: false, email:"", tel:{number:"", areaCode:""}, comments: ""};
 
   constructor() { }
 
