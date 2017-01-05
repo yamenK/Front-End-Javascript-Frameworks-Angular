@@ -1,22 +1,26 @@
 <div class="container">
     <div class="col-xs-12">
         <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation">
-                <a
-                        aria-controls="all menu"
-                        role="tab">The Menu</a></li>
-            <li role="presentation">
-                <a
-                        aria-controls="appetizers"
-                        role="tab">Appetizers</a></li>
-            <li role="presentation">
-                <a
-                        aria-controls="mains"
-                        role="tab">Mains</a></li>
-            <li role="presentation">
-                <a
-                        aria-controls="desserts"
-                        role="tab">Desserts</a></li>
+            <li role="presentation"
+                [ngClass]="{active:isSelected(1)}">
+                <a (click)="select(1)"
+                   aria-controls="all menu"
+                   role="tab">The Menu</a></li>
+            <li role="presentation"
+                [ngClass]="{active:isSelected(2)}">
+                <a (click)="select(2)"
+                   aria-controls="appetizers"
+                   role="tab">Appetizers</a></li>
+            <li role="presentation"
+                [ngClass]="{active:isSelected(3)}">
+                <a (click)="select(3)"
+                   aria-controls="mains"
+                   role="tab">Mains</a></li>
+            <li role="presentation"
+                [ngClass]="{active:isSelected(4)}">
+                <a  (click)="select(4)"
+                    aria-controls="desserts"
+                    role="tab">Desserts</a></li>
         </ul>
         <div class="tab-content">
             <ul class="media-list tab-pane fade in active">
@@ -35,5 +39,6 @@
                     </div>
                 </li>
             </ul>
+        </div>
     </div>
 </div>

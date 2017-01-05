@@ -45,7 +45,18 @@ export class MenuComponent implements OnInit {
         }
     ]
 
+    private tab = 1;
+
     constructor() { }
+
+    select(setTab){
+         this.tab = setTab;
+    }
+
+    isSelected(checkTab) {
+        return (this.tab === checkTab);
+    }
+
 
     ngOnInit() {
     }
