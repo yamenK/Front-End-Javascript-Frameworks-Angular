@@ -24,7 +24,7 @@
         </ul>
         <div class="tab-content">
             <ul class="media-list tab-pane fade in active">
-                <li class="media" *ngFor="let dish of dishes">
+                <li class="media" *ngFor="let dish of dishes | categoryFilter:filtText">
                     <div class="media-left media-middle">
                         <a href="#">
                             <img class="media-object img-thumbnail"
