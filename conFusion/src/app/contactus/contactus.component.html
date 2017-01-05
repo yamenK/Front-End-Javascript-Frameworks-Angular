@@ -45,17 +45,19 @@
       <h3>Send us your Feedback</h3>
     </div>
     <div class="col-xs-12 col-sm-9">
-      <form class="form-horizontal" role="form">
-        <div class="form-group">
+      <form class="form-horizontal" name="feedbackForm" (ngSubmit)="sendFeedback()" #feedbackForm="ngForm" novalidate>
+        <div class="form-group" [ngClass]="{ 'has-error' : !firstname.valid  && !firstname.pristine }">
           <label for="firstname" class="col-sm-2 control-label">First Name</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter First Name" [(ngModel)]="feedback.firstName" required>
+            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter First Name" [(ngModel)]="feedback.firstName" #firstname="ngModel" required>
+            <span [hidden]="firstname.valid || firstname.pristine" class="help-block">Your First name is required.</span>
           </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" [ngClass]="{ 'has-error' : !lastname.valid  && !lastname.pristine }">
           <label for="lastname" class="col-sm-2 control-label">Last Name</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Last Name" [(ngModel)]="feedback.lastName" required>
+            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Last Name" [(ngModel)]="feedback.lastName" #lastname="ngModel" required>
+            <span [hidden]="lastname.valid || lastname.pristine" class="help-block">Your Last name is required.</span>
           </div>
         </div>
         <div class="form-group">
@@ -71,10 +73,12 @@
             <input type="tel" class="form-control" id="telnum" name="telnum" placeholder="Tel. number" [(ngModel)]="feedback.tel.number">
           </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" [ngClass]="{ 'has-error has-feedback' : email.invalid && !email.pristine }">
           <label for="emailid" class="col-sm-2 control-label">Email</label>
           <div class="col-sm-10">
-            <input type="email" class="form-control" id="emailid" name="emailid" placeholder="Email"  [(ngModel)]="feedback.email" required>
+            <input type="email" class="form-control" id="emailid" name="emailid" placeholder="Email"  [(ngModel)]="feedback.email" #email="ngModel" required>
+            <span [hidden]="email.valid || email.pristine" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+            <span [hidden]="email.valid || email.pristine" class="help-block">Enter a valid email address.</span>
           </div>
         </div>
         <div class="form-group">
@@ -99,7 +103,7 @@
         </div>
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-primary">Send Feedback</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!feedbackForm.form.valid">Send Feedback</button>
           </div>
         </div>
       </form>

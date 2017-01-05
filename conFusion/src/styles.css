@@ -95,3 +95,7 @@ body {
     position: absolute;
     right: 0px;
 }
+
+[hidden] {
+    display: none !important;
+}
