@@ -8,6 +8,7 @@ import { MenuComponent } from './menu/menu.component';
 import { CategoryFilterPipe } from './menu/category-filter.pipe';
 import { ContactusComponent } from './contactus/contactus.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
+import { OrderByPipe } from './order-by-pipe/order-by.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
     MenuComponent,
     CategoryFilterPipe,
     ContactusComponent,
-    DishdetailComponent
+    DishdetailComponent,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,
