@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-dishdetail',
@@ -51,11 +52,23 @@ export class DishdetailComponent implements OnInit {
 
   filtertext : string="";
 
+  comment = {author: "", rating: 5, comment: "", date: ""};
 
   constructor() { }
 
-  ngOnInit() {
+
+  submitComment(form: NgForm){
+    this.comment.date = new Date().toISOString();
+
+    this.dish.comments.push(this.comment);
+    console.log(this.comment);
+
+    this.comment = {author: "", rating: 5, comment: "", date: ""};
+    form.form.reset();
+
   }
 
-
+  ngOnInit() {
+  }
 }
+
