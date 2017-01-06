@@ -49,6 +49,8 @@ export class DishdetailComponent implements OnInit {
     ]
   };
 
+  filtertext : string="";
+
 
   constructor() { }
 
