@@ -45,7 +45,7 @@
       <h3>Send us your Feedback</h3>
     </div>
     <div class="col-xs-12 col-sm-9">
-      <form class="form-horizontal" name="feedbackForm" (ngSubmit)="sendFeedback()" #feedbackForm="ngForm" novalidate>
+      <form class="form-horizontal" name="feedbackForm" (ngSubmit)="sendFeedback(feedbackForm)" #feedbackForm="ngForm" novalidate>
         <div class="form-group" [ngClass]="{ 'has-error' : !firstname.valid  && !firstname.pristine }">
           <label for="firstname" class="col-sm-2 control-label">First Name</label>
           <div class="col-sm-10">
@@ -81,18 +81,18 @@
             <span [hidden]="email.valid || email.pristine" class="help-block">Enter a valid email address.</span>
           </div>
         </div>
-        <div class="form-group">
+        <div class="form-group"  [ngClass]="{ 'has-error' : invalidChannelSelection }">
           <div class="checkbox col-sm-5 col-sm-offset-2">
             <label class="checkbox-inline">
               <input type="checkbox" name="approve" [(ngModel)]="feedback.agree">
               <strong>May we contact you?</strong>
             </label>
-          </div>
-          <div class="col-sm-3 col-sm-offset-1">
-            <select class="form-control">
-              <option>Tel.</option>
-              <option>Email</option>
+        </div>
+          <div class="col-sm-3 col-sm-offset-1" [hidden]="!feedback.agree">
+            <select class="form-control" name="channel"[(ngModel)]="feedback.mychannel">
+              <option *ngFor="let channel of channels" [value]="channel.value">{{channel.label}}</option>
             </select>
+            <span [hidden]="!invalidChannelSelection" class="help-block">Select an option.</span>
           </div>
         </div>
         <div class="form-group">

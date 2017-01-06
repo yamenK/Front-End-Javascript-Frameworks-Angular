@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-contactus',
@@ -13,29 +14,28 @@ export class ContactusComponent implements OnInit {
 
 
     constructor() {
-        // this.feebackForm
     }
-  
+
   invalidChannelSelection : boolean = false;
 
   ngOnInit() {
   }
 
-    sendFeedback() {
-        console.log(this.feedback);
+  sendFeedback(form: NgForm) {
+      console.log(this.feedback);
 
-        if (this.feedback.agree && (this.feedback.mychannel == "")) {
-            this.invalidChannelSelection = true;
-            console.log('incorrect');
-        }
-        else {
-            this.invalidChannelSelection = false;
-            this.feedback =  {mychannel:"", firstName:"", lastName:"",
-                agree: false, email:"", tel:{number:"", areaCode:""}, comments: ""};
-            this.feedback.mychannel = "";
-            // this.feedbackForm.$setPristine();
-            console.log(this.feedback);
-        }
-    };
+      if (this.feedback.agree && (this.feedback.mychannel == "")) {
+          this.invalidChannelSelection = true;
+          console.log('incorrect');
+      }
+      else {
+          this.invalidChannelSelection = false;
+          this.feedback =  {mychannel:"", firstName:"", lastName:"",
+              agree: false, email:"", tel:{number:"", areaCode:""}, comments: ""};
+          this.feedback.mychannel = "";
+          form.reset();
+          console.log(this.feedback);
+      }
+  };
 
 }
