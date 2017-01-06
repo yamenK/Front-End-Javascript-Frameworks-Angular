@@ -15,8 +15,17 @@
         </div>
       </div>
     </div>
-    </div>
     <div class="col-xs-9 col-xs-offset-1">
-      <p>Put the comments here</p>
+      <h3>Customer Comments</h3>
+      <ul class="media-list">
+        <li class="media" *ngFor="let comment of dish.comments">
+          <blockquote>
+            <h3>{{comment.rating}} Stars</h3>
+            <h4>{{comment.comment}}</h4>
+            <footer>{{comment.author}}, {{comment.date | date:'mediumDate'}}</footer>
+          </blockquote>
+        </li>
+      </ul>
     </div>
- </div>
+  </div>
+</div>
