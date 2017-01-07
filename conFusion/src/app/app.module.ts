@@ -9,6 +9,7 @@ import { CategoryFilterPipe } from './menu/category-filter.pipe';
 import { ContactusComponent } from './contactus/contactus.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { OrderByPipe } from './order-by-pipe/order-by.pipe';
+import {MenuService} from "./menu/menu.service";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { OrderByPipe } from './order-by-pipe/order-by.pipe';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [MenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
