@@ -4,10 +4,10 @@
     padding: 0px 0px;
 }
 .row-content {
-    margin: 0px auto;
-    padding: 50px 0px;
-    border-bottom: 1px ridge;
-    min-height: 400px;
+    margin: 0px auto !important;
+    padding: 50px 0px !important;
+    border-bottom: 1px ridge !important;
+    min-height: 400px !important;
 }
 .row-footer {
     margin: 0px auto;
@@ -15,13 +15,13 @@
     background-color: #AfAfAf;
 }
 .jumbotron {
-    margin: 0px auto;
-    padding: 70px 30px;
-    background: #7986CB;
-    color: floralwhite;
+    margin: 0px auto !important;
+    padding: 70px 30px !important;
+    background: #7986CB !important;
+    color: floralwhite !important;
 }
 .carousel {
-    background: #1a237e;
+    background: #1a237e !important;
 }
 .carousel .item {
     height: 300px;
@@ -33,43 +33,43 @@
     top: 0;
 }
 .navbar-inverse {
-    background: #303f9f;
-    color: #ffffff;
+    background: #303f9f !important;
+    color: #ffffff !important;
 }
 .navbar-inverse .navbar-nav > .active > a {
-    background: #1a237e;
-    color: #ffffff;
+    background: #1a237e !important;
+    color: #ffffff !important;
 }
 .navbar-inverse .navbar-nav > .active > a:hover {
-    background: #1a237e;
-    color: #ffffff;
+    background: #1a237e !important;
+    color: #ffffff !important;
 }
 .navbar-inverse .navbar-nav > .active > a:focus {
-    background: #1a237e;
-    color: #ffffff;
+    background: #1a237e !important;
+    color: #ffffff !important;
 }
 .navbar-inverse .navbar-nav > .open > a {
-    background: #1a237e;
-    color: #ffffff;
+    background: #1a237e !important;
+    color: #ffffff !important;
 }
 .navbar-inverse .navbar-nav > .open > a:hover {
-    background: #1a237e;
-    color: #ffffff;
+    background: #1a237e !important;
+    color: #ffffff !important;
 }
 .navbar-inverse .navbar-nav > .open > a:focus {
-    background: #1a237e;
-    color: #ffffff;
+    background: #1a237e !important;
+    color: #ffffff !important;
 }
 .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
-    background-color: #303f9f;
-    color: #eeeeee;
+    background-color: #303f9f !important;
+    color: #eeeeee !important;
 }
 .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover {
-    color: #000000;
+    color: #000000 !important;
 }
 .navbar-inverse .navbar-nav .open .dropdown-menu {
-    background-color: #303f9f;
-    color: #eeeeee;
+    background-color: #303f9f !important;
+    color: #eeeeee !important;
 }
 address {
     color: #0f0f0f;
