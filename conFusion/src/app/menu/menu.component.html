@@ -27,7 +27,7 @@
             <ul class="media-list tab-pane fade in active">
                 <li class="media" *ngFor="let dish of menu.dishes | categoryFilter:filtText">
                     <div class="media-left media-middle">
-                        <a href="#">
+                        <a [routerLink] = "['/menu', dish._id]">
                             <img class="media-object img-thumbnail"
                                  [src]=dish.image alt="Uthappizza">
                         </a>

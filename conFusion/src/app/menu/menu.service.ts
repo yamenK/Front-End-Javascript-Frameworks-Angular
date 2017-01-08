@@ -5,6 +5,7 @@ export class MenuService {
 
   dishes=[
     {
+      _id:0,
       name:'Uthapizza',
       image: '../../../assets/images/uthapizza.png',
       category: 'mains',
@@ -44,6 +45,7 @@ export class MenuService {
         }                                                          ]
     },
     {
+      _id:1,
       name:'Zucchipakoda',
       image: '../../../assets/images/zucchipakoda.png',
       category: 'appetizer',
@@ -83,6 +85,7 @@ export class MenuService {
         }                                                          ]
     },
     {
+      _id:2,
       name:'Vadonut',
       image: '../../../assets/images/vadonut.png',
       category: 'appetizer',
@@ -123,6 +126,7 @@ export class MenuService {
       ]
     },
     {
+      _id:3,
       name:'ElaiCheese Cake',
       image: '../../../assets/images/elaicheesecake.png',
       category: 'dessert',

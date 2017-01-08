@@ -11,18 +11,18 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#/">
-                        <span class="glyphicon glyphicon-home"
-                              aria-hidden="true"></span> Home</a></li>
-        <li><a href="#/aboutus">
-                        <span class="glyphicon glyphicon-info-sign"
-                              aria-hidden="true"></span> About</a></li>
-        <li><a href="#/menu">
-                         <span class="glyphicon glyphicon-list-alt"
-                               aria-hidden="true"></span>
-          Menu</a></li>
-        <li><a href="#/contactus">
-          <i class="fa fa-envelope-o"></i> Contact</a></li>
+        <li>
+          <a routerLink=""><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a>
+        </li>
+        <li  routerLinkActive="active">
+          <a routerLink="aboutus"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> About</a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="menu"> <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Menu</a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="contactus"> <i class="fa fa-envelope-o"></i> Contact</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -51,9 +51,7 @@
   </div>
 </header>
 
-
-<app-menu></app-menu>
-
+<router-outlet></router-outlet>
 
 <footer class="row-footer">
   <div class="container">

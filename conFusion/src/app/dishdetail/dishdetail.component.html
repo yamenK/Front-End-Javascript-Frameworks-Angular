@@ -1,11 +1,12 @@
 <div class="container">
   <div class="row row-content">
     <div class="col-xs-12">
+      <button class="btn btn-xs btn-primary pull-right" type="button" routerLink="/menu">
+        Back to Menu
+      </button>
       <div class="media">
         <div class="media-left media-middle">
-          <a href="#">
-            <img class="media-object img-thumbnail" [src]=dish.image alt="Uthappizza">
-          </a>
+          <img class="media-object img-thumbnail" [src]=dish.image alt="Uthappizza">
         </div>
         <div class="media-body">
           <h2 class="media-heading">{{dish.name}}

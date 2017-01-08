@@ -10,6 +10,7 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { OrderByPipe } from './order-by-pipe/order-by.pipe';
 import {MenuService} from "./menu/menu.service";
+import {AppRoutingModule} from "./app-routing/app-routing.module";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {MenuService} from "./menu/menu.service";
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [MenuService],
   bootstrap: [AppComponent]
