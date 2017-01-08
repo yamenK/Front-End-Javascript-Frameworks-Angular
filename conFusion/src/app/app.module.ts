@@ -12,6 +12,8 @@ import { OrderByPipe } from './order-by-pipe/order-by.pipe';
 import {MenuService} from "./menu/menu.service";
 import {AppRoutingModule} from "./app-routing/app-routing.module";
 import {AboutusComponent} from "./aboutus/aboutus.component";
+import { HomeComponent } from './home/home.component';
+import {CorporateService} from "./aboutus/corporate.service";
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import {AboutusComponent} from "./aboutus/aboutus.component";
     ContactusComponent,
     DishdetailComponent,
     OrderByPipe,
-    AboutusComponent
+    AboutusComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,7 @@ import {AboutusComponent} from "./aboutus/aboutus.component";
     HttpModule,
     AppRoutingModule
   ],
-  providers: [MenuService],
+  providers: [MenuService, CorporateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
