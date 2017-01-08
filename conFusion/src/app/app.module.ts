@@ -11,6 +11,7 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { OrderByPipe } from './order-by-pipe/order-by.pipe';
 import {MenuService} from "./menu/menu.service";
 import {AppRoutingModule} from "./app-routing/app-routing.module";
+import {AboutusComponent} from "./aboutus/aboutus.component";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {AppRoutingModule} from "./app-routing/app-routing.module";
     CategoryFilterPipe,
     ContactusComponent,
     DishdetailComponent,
-    OrderByPipe
+    OrderByPipe,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,
