@@ -1,6 +1,9 @@
 <div class="container">
   <div class="row row-content">
-    <div class="col-xs-12">
+    <div class="col-xs-12" [hidden]=showDish>
+      <h3>{{message}}</h3>
+    </div>
+    <div class="col-xs-12" [hidden]=!showDish>
       <button class="btn btn-xs btn-primary pull-right" type="button" routerLink="/menu">
         Back to Menu
       </button>
@@ -16,7 +19,7 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-9 col-xs-offset-1">
+    <div class="col-xs-9 col-xs-offset-1" [hidden]=!showDish>
       <h3>Customer Comments <small>Sort by: <input type="text" [(ngModel)]="filtertext"></small></h3>
       <ul class="media-list">
         <li class="media" *ngFor="let comment of dish?.comments | orderBy: filtertext">
@@ -28,7 +31,7 @@
         </li>
       </ul>
     </div>
-    <div class="col-xs-9 col-xs-offset-1">
+    <div class="col-xs-9 col-xs-offset-1" [hidden]=!showDish>
       <ul class="list-unstyled">
         <li>
           <blockquote [hidden]="commentForm.invalid || commentForm.pristine">

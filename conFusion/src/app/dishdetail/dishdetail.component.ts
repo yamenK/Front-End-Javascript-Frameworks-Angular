@@ -13,6 +13,8 @@ export class DishdetailComponent implements OnInit {
   dish = null;
   filtertext : string="";
   comment = {author: "", rating: 5, comment: "", date: ""};
+  showDish = false;
+  message="Loading ...";
 
   private id;
 
@@ -34,7 +36,14 @@ export class DishdetailComponent implements OnInit {
     // (+) converts string 'id' to a number
     let id = +this.route.snapshot.params['id'];
     this.menu.getDish(id)
-        .then(dish => this.dish = dish);
+        .then(dish => {
+          this.showDish = true;
+          this.dish = dish;
+        })
+        .catch(error => {
+          this.showDish = false;
+          this.message = "Error " + error;
+        });
   }
 }
 

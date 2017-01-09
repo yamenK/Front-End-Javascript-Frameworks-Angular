@@ -12,6 +12,8 @@ export class MenuComponent implements OnInit {
     private tab = 1;
     private filtText = '';
     dishes = [];
+    showMenu = false;
+    message = "Loading ...";
 
     constructor(private menu: MenuService) { }
 
@@ -32,9 +34,14 @@ export class MenuComponent implements OnInit {
         return (this.tab === checkTab);
     }
 
-
     ngOnInit() {
         this.menu.getDishes()
-            .then(dishes => this.dishes = dishes);
+            .then(dishes => {
+                this.showMenu = true;
+                this.dishes = dishes
+            }).catch (error => {
+                this.showMenu = false;
+                this.message = "Error " + error;
+            });
     }
 }
