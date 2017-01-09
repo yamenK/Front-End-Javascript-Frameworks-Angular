@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   constructor(private menu: MenuService, private corporateService: CorporateService) { }
 
   ngOnInit() {
-    this.dish = this.menu.getDish(0);
+    this.menu.getDish(0).then(dish => this.dish = dish);
     this.promotion = this.menu.getPromotion(0);
     this.chef = this.corporateService.getLeader(3);
   }

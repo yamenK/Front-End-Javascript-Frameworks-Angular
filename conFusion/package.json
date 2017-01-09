@@ -5,7 +5,7 @@
   "angular-cli": {},
   "scripts": {
     "start": "concurrently \"npm run start-dbserver\" \"npm run serve\"",
-    "start-dbserver": "json-server --watch json-serve/db.json",
+    "start-dbserver": "json-server --watch json-server/db.json",
     "serve": "ng serve",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",

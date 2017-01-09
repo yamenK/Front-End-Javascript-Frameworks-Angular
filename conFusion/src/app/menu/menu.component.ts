@@ -11,6 +11,7 @@ import {MenuService} from "./menu.service";
 export class MenuComponent implements OnInit {
     private tab = 1;
     private filtText = '';
+    dishes = [];
 
     constructor(private menu: MenuService) { }
 
@@ -33,5 +34,7 @@ export class MenuComponent implements OnInit {
 
 
     ngOnInit() {
+        this.menu.getDishes()
+            .then(dishes => this.dishes = dishes);
     }
 }

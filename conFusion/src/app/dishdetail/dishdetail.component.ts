@@ -10,7 +10,7 @@ import {MenuService} from "../menu/menu.service";
 })
 export class DishdetailComponent implements OnInit {
 
-  dish= null;
+  dish = null;
   filtertext : string="";
   comment = {author: "", rating: 5, comment: "", date: ""};
 
@@ -33,7 +33,8 @@ export class DishdetailComponent implements OnInit {
   ngOnInit() {
     // (+) converts string 'id' to a number
     let id = +this.route.snapshot.params['id'];
-    this.dish = this.menu.getDish(id);
+    this.menu.getDish(id)
+        .then(dish => this.dish = dish);
   }
 }
 
