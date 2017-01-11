@@ -9,13 +9,13 @@ import {MenuService} from "./menu.service";
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-    private tab = 1;
-    private filtText = '';
+    tab = 1;
+    filtText = '';
     dishes = [];
     showMenu = false;
     message = "Loading ...";
 
-    constructor(private menu: MenuService) { }
+    constructor(public menu: MenuService) { }
 
     select(setTab){
         this.tab = setTab;

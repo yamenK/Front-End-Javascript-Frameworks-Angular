@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { AboutusComponent } from './aboutus.component';
+import {CorporateService} from "./corporate.service";
 
 describe('AboutusComponent', () => {
   let component: AboutusComponent;
@@ -11,7 +12,8 @@ describe('AboutusComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AboutusComponent ]
+      declarations: [ AboutusComponent ],
+      providers:    [ {provide: CorporateService, useValue: new CorporateService()}]
     })
     .compileComponents();
   }));
