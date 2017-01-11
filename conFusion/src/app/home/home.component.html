@@ -6,7 +6,7 @@
     </div>
     <div class="col-xs-12 col-sm-9 col-sm-pull-3">
       <div [hidden]=showDish>
-        <h3>{{message}}</h3>
+        <h3>{{dishMessage}}</h3>
       </div>
       <div class="media" [hidden]=!showDish>
         <h2>{{dish?.name}} <span class="label label-danger">{{dish?.label}}</span> <span class="badge">${{dish?.price}}</span>
@@ -29,7 +29,10 @@
       <h3 align=center>This Month's Promotions</h3>
     </div>
     <div class="col-xs-12 col-sm-9">
-      <ul class="media-list">
+      <div [hidden]=showPromotion>
+        <h3>{{promoMessage}}</h3>
+      </div>
+      <ul class="media-list" [hidden]=!showPromotion>
         <li class="media">
           <div class="media-body">
             <h2>{{promotion.name}} <span class="label label-danger">{{promotion.label}}</span> <span

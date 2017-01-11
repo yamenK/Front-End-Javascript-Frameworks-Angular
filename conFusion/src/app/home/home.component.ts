@@ -10,10 +10,16 @@ import {CorporateService} from "../aboutus/corporate.service";
 export class HomeComponent implements OnInit {
 
   private dish;
-  private promotion;
-  private chef;
+  private dishMessage="Loading ...";
   private showDish = false;
-  private message="Loading ...";
+
+  private promotion;
+  private promoMessage="Loading ...";
+  private showPromotion = false;
+
+  private chef;
+
+
 
   constructor(private menu: MenuService, private corporateService: CorporateService) { }
 
@@ -25,9 +31,19 @@ export class HomeComponent implements OnInit {
         })
         .catch(error => {
           this.showDish = false;
-          this.message = "Error " + error;
+          this.dishMessage = "Error " + error;
         });
-    this.promotion = this.menu.getPromotion(0);
+
+    this.promotion = this.menu.getPromotion(0)
+        .then(promo => {
+          this.showPromotion = true;
+          this.promotion = promo
+        })
+        .catch(error => {
+          this.showPromotion = false;
+          this.promoMessage =  "Error " + error;
+        });
+
     this.chef = this.corporateService.getLeader(3);
   }
 
