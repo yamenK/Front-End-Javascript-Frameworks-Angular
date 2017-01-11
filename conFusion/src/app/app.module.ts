@@ -14,6 +14,7 @@ import {AppRoutingModule} from "./app-routing/app-routing.module";
 import {AboutusComponent} from "./aboutus/aboutus.component";
 import { HomeComponent } from './home/home.component';
 import {CorporateService} from "./aboutus/corporate.service";
+import {FeedbackService} from "./contactus/feedback.service";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import {CorporateService} from "./aboutus/corporate.service";
     HttpModule,
     AppRoutingModule
   ],
-  providers: [MenuService, CorporateService],
+  providers: [MenuService, CorporateService, FeedbackService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

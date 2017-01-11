@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from "@angular/forms";
+import {FeedbackService} from "./feedback.service";
 
 @Component({
   selector: 'app-contactus',
@@ -13,29 +14,23 @@ export class ContactusComponent implements OnInit {
   channels = [{value: "tel", label: "Tel."}, {value: "Email", label: "Email"}];
 
 
-    constructor() {
+    constructor(private feedbackService: FeedbackService) {
     }
 
-  invalidChannelSelection : boolean = false;
+    invalidChannelSelection : boolean = false;
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
-  sendFeedback(form: NgForm) {
-      console.log(this.feedback);
-
+    sendFeedback(form: NgForm) {
       if (this.feedback.agree && (this.feedback.mychannel == "")) {
           this.invalidChannelSelection = true;
           console.log('incorrect');
-      }
-      else {
+      }else {
           this.invalidChannelSelection = false;
-          this.feedback =  {mychannel:"", firstName:"", lastName:"",
-              agree: false, email:"", tel:{number:"", areaCode:""}, comments: ""};
-          this.feedback.mychannel = "";
+          this.feedbackService.submitFeedback(this.feedback);
           form.reset();
-          console.log(this.feedback);
       }
-  };
+    };
 
 }
