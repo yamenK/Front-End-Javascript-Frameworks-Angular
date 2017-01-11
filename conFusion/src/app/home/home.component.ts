@@ -18,6 +18,8 @@ export class HomeComponent implements OnInit {
   private showPromotion = false;
 
   private chef;
+  private chefMessage = "Loading ...";
+  private showChef = false;
 
 
 
@@ -44,7 +46,15 @@ export class HomeComponent implements OnInit {
           this.promoMessage =  "Error " + error;
         });
 
-    this.chef = this.corporateService.getLeader(3);
+    this.chef = this.corporateService.getLeader(3)
+        .then(chef => {
+            this.showChef = true;
+            this.chef = chef
+        })
+        .catch(error => {
+            this.showChef = false;
+            this.chefMessage =  "Error " + error;
+        });
   }
 
 }

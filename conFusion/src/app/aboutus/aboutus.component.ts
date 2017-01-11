@@ -9,11 +9,21 @@ import {CorporateService} from "./corporate.service";
 export class AboutusComponent implements OnInit {
 
   private chefs;
+  private showChefs :boolean = false;
+  private message :string = "Loading ..."
 
   constructor(private corporateService: CorporateService) {}
 
   ngOnInit() {
-    this.chefs = this.corporateService.getLeaders();
+    this.corporateService.getLeaders()
+        .then(leaders => {
+          this.showChefs = true;
+          this.chefs = leaders;
+        })
+        .catch(error =>{
+          this.showChefs = false;
+          this.message = "Error " + error;
+        });
   }
 
 }
